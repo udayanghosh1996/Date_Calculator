@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        input[type=text], input[type=submit] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            display: block;
+            width: 95%;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #2a2a2a;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Date Time Calculator</h1>
+        <h2>Add Date Time to be added with current Date and Time</h2>
+        <form method="post">
+            Years: <input type="text" name="years">
+            Months: <input type="text" name="months">
+            Weeks: <input type="text" name="weeks">
+            Days: <input type="text" name="days">
+            Hours: <input type="text" name="hours">
+            Minutes: <input type="text" name="minutes">
+            Seconds: <input type="text" name="seconds">
+            <input type="submit" value="Calculate Date">
+        </form>
+        {% if result %}
+            <div class="result">
+                <h2>Original Date and Time: {{ original }}</h2>
+                <h2>New Date and Time: {{ result }}</h2>
+            </div>
+        {% endif %}
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
