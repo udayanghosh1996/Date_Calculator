@@ -5,3 +5,5 @@ dependencies:
   - pip
   - pip:
     - flask==2.2.2
+    - python-dateutil
+    - DateTime
