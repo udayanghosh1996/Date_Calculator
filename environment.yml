@@ -7,3 +7,4 @@ dependencies:
     - flask
     - python-dateutil
     - DateTime
+    - streamlit
