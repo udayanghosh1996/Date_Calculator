@@ -1,0 +1,7 @@
+channles:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - flask==2.2.2
