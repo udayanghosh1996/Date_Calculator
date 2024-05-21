@@ -5,7 +5,10 @@ from dateutil.relativedelta import relativedelta
 def add_time_to_date(ini_date, ini_month, ini_year, ini_hour, ini_min, ini_sec, years, months, weeks, days, hours,
                      minutes, seconds):
     # Get the current date and time
-    current_date = datetime(ini_year, ini_month, ini_date, ini_hour, ini_min, ini_sec)
+    if ini_date == ini_month == ini_year == ini_hour == ini_min == ini_sec == 0:
+        current_date = datetime.now()
+    else:
+        current_date = datetime(ini_year, ini_month, ini_date, ini_hour, ini_min, ini_sec)
     print("Current date and time:", current_date)
 
     # Create a relativedelta object for years and months
