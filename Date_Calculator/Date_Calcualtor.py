@@ -1,8 +1,10 @@
 from datetime import datetime, timedelta
 
-def add_time(years=0, months=0, weeks=0, days=0, hours=0, minutes=0, seconds=0):
+
+def add_time(ini_date, ini_month, ini_year, ini_hour, ini_min, ini_sec, years=0, months=0, weeks=0, days=0, hours=0,
+             minutes=0, seconds=0):
     # Current date and time
-    current_datetime = datetime.now()
+    current_datetime = datetime(ini_year, ini_month, ini_date, ini_hour, ini_min, ini_sec)
 
     # Adding years and months manually due to variability in month lengths and leap years
     new_month = current_datetime.month + months
@@ -25,7 +27,8 @@ def add_time(years=0, months=0, weeks=0, days=0, hours=0, minutes=0, seconds=0):
     new_day = min(current_datetime.day, max_day)
 
     # Creating a new datetime object for the modified year, month, and day
-    result_date = datetime(new_year, new_month, new_day, current_datetime.hour, current_datetime.minute, current_datetime.second)
+    result_date = datetime(new_year, new_month, new_day, current_datetime.hour, current_datetime.minute,
+                           current_datetime.second)
 
     # Adding weeks, days, hours, minutes, and seconds using timedelta
     result_date += timedelta(weeks=weeks, days=days, hours=hours, minutes=minutes, seconds=seconds)
